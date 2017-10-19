@@ -9,11 +9,11 @@ const cssName = environment === 'production' ? 'styles-[hash].css' : 'styles.css
 const jsName = environment === 'production' ? 'bundle-[hash].js' : 'bundle.js';
 
 module.exports = {
-    context: path.resolve(__dirname, './src/app'),
+    context: path.resolve(__dirname, './src'),
     resolve: {
         modules: [
             'node_modules',
-            path.resolve(__dirname, './src/app'),
+            path.resolve(__dirname, './src'),
         ],
         extensions: ['.js', '.jsx']
     },
@@ -27,7 +27,7 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: 'index.ejs',
-            title: 'React',
+            title: 'Александр Щеголь',
             favicon: 'favicon.ico'
         }),
         new ExtractTextPlugin(cssName),

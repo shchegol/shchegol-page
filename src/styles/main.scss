@@ -1,6 +1,16 @@
-$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap",
-'vendors/bootstrap/variables',
-'vendors/bootstrap/bootwatch',
+@import
+  // utils
+'utils/variables',
+'utils/function',
+'utils/mixins',
+
+  //base
+'base/reset',
+'base/base',
+
+  // layouts
+'../layouts/MainLayout/MainLayout',
+
+  // important
 'base/modificators'
 ;
