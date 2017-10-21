@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import MainLayout from './layouts/MainLayout'
+import { BrowserRouter } from 'react-router-dom'
+import Card from './layouts/Card'
 import './styles/main.scss'
 
 const app = document.getElementById('react-root');
 
 ReactDOM.render((
-    <div className="background">
-        <MainLayout/>
-    </div>
+        <BrowserRouter>
+            <Card/>
+        </BrowserRouter>
 ), app);
