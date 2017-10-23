@@ -11,10 +11,7 @@ const jsName = environment === 'production' ? 'bundle-[hash].js' : 'bundle.js';
 module.exports = {
     context: path.resolve(__dirname, './src'),
     resolve: {
-        modules: [
-            'node_modules',
-            path.resolve(__dirname, './src'),
-        ],
+        modules: [path.resolve(__dirname, "src"), "node_modules"],
         extensions: ['.js', '.jsx']
     },
     entry: './client.js',

@@ -3,17 +3,19 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
-import store from 'store/store';
+import configureStore from './redux/configureStore';
 
-import Card from './layouts/Card';
+import Root from './containers/index';
 import './styles/main.scss';
 
 const app = document.getElementById('react-root');
-
-ReactDOM.render((
-    <Provider store={store}>
+const store = configureStore();
+const component = (
+    <Provider store={ store }>
         <BrowserRouter>
-            <Card/>
+            <Root/>
         </BrowserRouter>
     </Provider>
-), app);
+);
+
+ReactDOM.render(component, app);

@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import Main from '../pages/Main';
+import Contacts from '../pages/Contacts';
+import Skills from '../pages/Skills';
+import Projects from '../pages/Projects';
 
-import Main from '../../pages/Main';
-import Contacts from '../../pages/Contacts';
-import Skills from '../../pages/Skills';
-import Projects from '../../pages/Projects';
-
-
-export default class Card extends Component {
+export default class Root extends Component {
     constructor(props) {
         super(props);
     }

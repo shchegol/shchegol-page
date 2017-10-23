@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {flipCard} from '../../actions/mainAction';
-import {connect} from 'react-redux';
+import { flipCard } from '../../redux/actions/mainAction';
+import { connect } from 'react-redux';
 import { autobind } from 'core-decorators';
 
-@connect((store)=>{
-    return {
-        cardSide: store.cardSide
-    }
+@connect((store) => {
+    return { cardSide: store.side.cardSide }
 })
 @autobind()
 export default class Main extends Component {
@@ -15,7 +13,7 @@ export default class Main extends Component {
         super(props);
     }
 
-    flipCard() {
+    handleClick() {
         this.props.dispatch(flipCard());
     }
 
@@ -27,17 +25,17 @@ export default class Main extends Component {
 
                 <div className="mt_2">
                     <p>
-                        <Link to="/" onClick={ this.flipCard }>
+                        <Link to="/Skills" onClick={ this.handleClick }>
                             Skills
                         </Link>
                     </p>
                     <p>
-                        <Link to="/Projects" onClick={ this.flipCard }>
+                        <Link to="/Projects" onClick={ this.handleClick }>
                             Projects
                         </Link>
                     </p>
                     <p>
-                        <Link to="/Contacts" onClick={ this.flipCard }>
+                        <Link to="/Contacts" onClick={ this.handleClick }>
                             Contacts
                         </Link>
                     </p>
