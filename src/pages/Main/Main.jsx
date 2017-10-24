@@ -22,7 +22,7 @@ export default class Main extends Component {
     render() {
         return (
             <div>
-                <h1 className="title">Alexander Shchegol</h1>
+                <h1 className="title">ALEXANDER SHCHEGOL</h1>
                 <p className="description">Frontend Developer</p>
 
                 <div className="mt_2">
