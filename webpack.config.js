@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const environment = process.env.NODE_ENV;
 const cssName = environment === 'production' ? 'styles-[hash].css' : 'styles.css';
@@ -11,7 +11,7 @@ const jsName = environment === 'production' ? 'bundle-[hash].js' : 'bundle.js';
 module.exports = {
     context: path.resolve(__dirname, './src'),
     resolve: {
-        modules: [path.resolve(__dirname, "src"), "node_modules"],
+        modules: ['node_modules', 'src'],
         extensions: ['.js', '.jsx']
     },
     entry: './client.js',
@@ -25,7 +25,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'index.ejs',
             title: 'Александр Щеголь',
-            favicon: 'favicon.ico'
+            favicon: 'images/favicon.ico'
         }),
         new ExtractTextPlugin(cssName),
         new webpack.HotModuleReplacementPlugin(),
@@ -56,11 +56,11 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [{
-                    loader: "style-loader"
+                    loader: 'style-loader'
                 }, {
-                    loader: "css-loader"
+                    loader: 'css-loader'
                 }, {
-                    loader: "sass-loader"
+                    loader: 'sass-loader'
                 }]
             },
             {

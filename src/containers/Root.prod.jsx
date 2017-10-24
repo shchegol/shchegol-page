@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Main from 'pages/Main';
+import Contacts from 'pages/Contacts';
+import Skills from 'pages/Skills';
+import Projects from 'pages/Projects';
 
-import Main from '../pages/Main';
-import Contacts from '../pages/Contacts';
-import Skills from '../pages/Skills';
-import Projects from '../pages/Projects';
+@connect((store) => {
+    return { cardSide: store.side.cardSide }
+})
 
 export default class Root extends Component {
     constructor(props) {
@@ -31,3 +36,7 @@ export default class Root extends Component {
         )
     }
 }
+
+Root.propTypes = {
+    cardSide: PropTypes.string,
+};

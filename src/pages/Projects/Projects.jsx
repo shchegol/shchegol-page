@@ -1,13 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { flipCard } from '../../redux/actions/mainAction';
 import { connect } from 'react-redux';
 import { autobind } from 'core-decorators';
+import { flipCard } from 'redux/actions/mainAction';
 
 @connect((store) => {
     return { cardSide: store.side.cardSide }
 })
 @autobind()
+
 export default class Projects extends Component {
     constructor(props) {
         super(props);
@@ -34,3 +36,7 @@ export default class Projects extends Component {
         )
     }
 }
+
+Projects.propTypes = {
+    dispatch: PropTypes.func
+};
