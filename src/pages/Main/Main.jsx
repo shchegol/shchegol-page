@@ -21,27 +21,28 @@ export default class Main extends Component {
 
     render() {
         return (
-            <div className="page">
-                <div className="title">
-                    <h1>ALEXANDER SHCHEGOL</h1>
+            <section className="page">
+
+                <header className="title">
+                    <h1 className="text-animation">
+                        ALEXANDER SHCHEGOL
+                    </h1>
                     <p className="title__caption">Frontend Developer</p>
-                </div>
+                </header>
 
                 <div className="row">
-                    <div className="col-sm-8">
+                    <article className="col-sm-8">
                         <p>
                             Web development is a huge part of my life.
-                            I want to be a strong programmer and every day step by step
-                            I try to approach this goal.
                         </p>
 
                         <p>
-                            I invest all my capabilities in every project and make a main emphasis on performance, ease
-                            of use and encriedable design
+                            I try to invest all my energy in every project that I do
+                            and make a main emphasis on performance and design
                         </p>
-                    </div>
+                    </article>
 
-                    <div className="col-sm-4 text_right">
+                    <nav className="col-sm-4 text_right">
                         <Link to="/Skills" className="page__link" onClick={ this.handleClick }>
                             Skills
                         </Link>
@@ -53,11 +54,9 @@ export default class Main extends Component {
                         <Link to="/Contacts" className="page__link" onClick={ this.handleClick }>
                             Contacts
                         </Link>
-                    </div>
-
-
+                    </nav>
                 </div>
-            </div>
+            </section>
         )
     }
 }

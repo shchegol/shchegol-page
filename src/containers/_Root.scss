@@ -38,8 +38,9 @@
     width: 100%;
     padding: 3rem;
     background: #fff url(../images/bg.png) repeat;
-    box-shadow: 2px 1px 3px 0 rgba(0, 0, 0, .3),
-    0 0 32px 0 rgba(0, 0, 0, .1);
+    box-shadow: 2px 1px 3px 0 black(.3),
+    0 0 32px 0 black(.1),
+    0 0 100px 0 black(.1);
     border-radius: $radius-primary;
     backface-visibility: hidden;
     transform-style: preserve-3d;
@@ -87,6 +88,12 @@
     position: absolute;
     top: 0;
     left: 0;
+    line-height: 1.5rem;
+    color: $gray-600;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

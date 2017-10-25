@@ -21,17 +21,17 @@ export default class Projects extends Component {
 
     render() {
         return (
-            <div className="page">
+            <section className="page">
                 <Link to="/" className="page__close" onClick={ this.handleClick }>
                     Back
                 </Link>
 
-                <div className="title">
+                <header className="title">
                     <h1>Projects</h1>
-                </div>
+                </header>
 
                 <a target="__blank" className="page__link" href="http://be-ka.ru/">Белка</a>
-            </div>
+            </section>
         )
     }
 }

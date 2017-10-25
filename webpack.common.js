@@ -83,13 +83,5 @@ module.exports = {
             {test: /\.png$/, use: 'url-loader?limit=10000&mimetype=image/png'},
             {test: /\.svg/, use: 'url-loader?limit=26000&mimetype=image/svg+xml'},
         ]
-    },
-
-    devServer: {
-        hot: environment !== 'production',
-        contentBase: path.resolve(__dirname, 'dist'),
-        publicPath: '/'
-    },
-
-    devtool: environment !== 'production' ? 'inline-source-map' : null
+    }
 };

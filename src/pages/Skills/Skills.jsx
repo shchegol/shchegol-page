@@ -21,15 +21,15 @@ export default class Skills extends Component {
 
     render() {
         return (
-            <div className="page">
+            <section className="page">
                 <Link to="/" className="page__close" onClick={ this.handleClick }>
                     Back
                 </Link>
 
-                <div className="title">
+                <header className="title">
                     <h1>Skills</h1>
-                </div>
-            </div>
+                </header>
+            </section>
         )
     }
 }

@@ -21,22 +21,22 @@ export default class Contacts extends Component {
 
     render() {
         return (
-            <div className="page">
+            <section className="page">
                 <Link to="/" className="page__close" onClick={ this.handleClick }>
                     Back
                 </Link>
 
-                <div className="title">
+                <header className="title">
                     <h1>Contacts</h1>
-                </div>
+                </header>
 
                 <a className="page__link" href="tel:+79261895848">+7 (926) 189–58–48</a>
                 <a className="page__link" target="__blank" href="http://vk.com/zelenzoom">ВКонтакте</a>
-            </div>
+            </section>
         )
     }
 }
 
 Contacts.propTypes = {
-    dispatch: PropTypes.func.isRequired,
+    dispatch: PropTypes.func,
 };
