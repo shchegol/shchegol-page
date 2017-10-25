@@ -21,26 +21,41 @@ export default class Main extends Component {
 
     render() {
         return (
-            <div>
-                <h1 className="title">ALEXANDER SHCHEGOL</h1>
-                <p className="description">Frontend Developer</p>
+            <div className="page">
+                <div className="title">
+                    <h1>ALEXANDER SHCHEGOL</h1>
+                    <p className="title__caption">Frontend Developer</p>
+                </div>
 
-                <div className="mt_2">
-                    <p>
-                        <Link to="/Skills" onClick={ this.handleClick }>
+                <div className="row">
+                    <div className="col-sm-8">
+                        <p>
+                            Web development is a huge part of my life.
+                            I want to be a strong programmer and every day step by step
+                            I try to approach this goal.
+                        </p>
+
+                        <p>
+                            I invest all my capabilities in every project and make a main emphasis on performance, ease
+                            of use and encriedable design
+                        </p>
+                    </div>
+
+                    <div className="col-sm-4 text_right">
+                        <Link to="/Skills" className="page__link" onClick={ this.handleClick }>
                             Skills
                         </Link>
-                    </p>
-                    <p>
-                        <Link to="/Projects" onClick={ this.handleClick }>
-                            Projects
-                        </Link>
-                    </p>
-                    <p>
-                        <Link to="/Contacts" onClick={ this.handleClick }>
+
+                        { /*<Link to="/Projects" className="page__link" onClick={ this.handleClick }>*/ }
+                        { /*Projects*/ }
+                        { /*</Link>*/ }
+
+                        <Link to="/Contacts" className="page__link" onClick={ this.handleClick }>
                             Contacts
                         </Link>
-                    </p>
+                    </div>
+
+
                 </div>
             </div>
         )

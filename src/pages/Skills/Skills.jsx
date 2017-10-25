@@ -21,12 +21,13 @@ export default class Skills extends Component {
 
     render() {
         return (
-            <div>
-               Skills
-                <div className="mt_2">
-                    <Link to="/" onClick={ this.handleClick }>
-                        Back
-                    </Link>
+            <div className="page">
+                <Link to="/" className="page__close" onClick={ this.handleClick }>
+                    Back
+                </Link>
+
+                <div className="title">
+                    <h1>Skills</h1>
                 </div>
             </div>
         )

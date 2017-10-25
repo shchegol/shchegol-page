@@ -36,7 +36,7 @@ export default class Root extends Component {
                     </main>
                 </div>
 
-                <DevTools/>
+                {/*<DevTools/>*/}
             </div>
         )
     }

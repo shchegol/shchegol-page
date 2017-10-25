@@ -18,6 +18,17 @@
   height: 100%;
   width: 100%;
 
+  &::before {
+    z-index: 3;
+    content: '';
+    position: absolute;
+    bottom: -2rem;
+    right: 2rem;
+    width: 167px;
+    height: 145px;
+    background: url(../images/sprite.png) top left no-repeat;
+  }
+
   &__front,
   &__back {
     position: absolute;
@@ -57,39 +68,45 @@
   }
 }
 
+.page {
+  position: relative;
+
+  &__link {
+    display: block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.2rem;
+    color: $blue-500;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
 
 .title {
+  margin-bottom: 2rem;
+  text-align: right;
+  font-family: $font-second;
+  color: $gray-900;
+  text-transform: uppercase;
+
+  &__caption {
+    font-size: 0.7rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #9e9e9e;
+    text-transform: none;
+  }
+}
+
+.subtitle {
+  color: $gray-700;
   margin-bottom: .5rem;
-}
-
-.description {
-  font-size: 0.7rem;
-  font-weight: 300;
-  line-height: 1.2;
-  color: #9e9e9e;
-}
-
-.work {
-  &__title {
-    margin-bottom: 0.5rem;
-  }
-  &__link {
-    position: relative;
-    display: block;
-    padding-top: 0.5rem;
-    padding-bottom: 0.2rem;
-    color: $gray-800;
-  }
-}
-
-.contacts {
-  &__title {
-    margin-bottom: 0.5rem;
-  }
-  &__link {
-    display: block;
-    padding-top: 0.5rem;
-    padding-bottom: 0.2rem;
-    color: $gray-800;
-  }
 }

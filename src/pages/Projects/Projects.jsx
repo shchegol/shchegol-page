@@ -21,17 +21,16 @@ export default class Projects extends Component {
 
     render() {
         return (
-            <div className="work">
-                <h2 className="work__title">Fresh</h2>
-                <a target="__blank" className="work__link" href="https://mida-studio.ru/">Сайт Дарьи Михайловой</a>
-                <a target="__blank" className="work__link" href="http://kollektorov.net/">Современная защита</a>
-                <a target="__blank" className="work__link" href="http://be-ka.ru/">Белка</a>
+            <div className="page">
+                <Link to="/" className="page__close" onClick={ this.handleClick }>
+                    Back
+                </Link>
 
-                <div className="mt_2">
-                    <Link to="/" onClick={ this.handleClick }>
-                        Back
-                    </Link>
+                <div className="title">
+                    <h1>Projects</h1>
                 </div>
+
+                <a target="__blank" className="page__link" href="http://be-ka.ru/">Белка</a>
             </div>
         )
     }

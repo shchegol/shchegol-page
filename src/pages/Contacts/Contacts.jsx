@@ -21,16 +21,17 @@ export default class Contacts extends Component {
 
     render() {
         return (
-            <div className="contacts">
-                <h2 className="contacts__title">Контакты</h2>
-                <a className="contacts__link" href="tel:+79261895848">+7 (926) 189–58–48</a>
-                <a className="contacts__link" target="__blank" href="http://vk.com/zelenzoom">ВКонтакте</a>
+            <div className="page">
+                <Link to="/" className="page__close" onClick={ this.handleClick }>
+                    Back
+                </Link>
 
-                <div className="mt_2">
-                    <Link to="/" onClick={ this.handleClick }>
-                        Back
-                    </Link>
+                <div className="title">
+                    <h1>Contacts</h1>
                 </div>
+
+                <a className="page__link" href="tel:+79261895848">+7 (926) 189–58–48</a>
+                <a className="page__link" target="__blank" href="http://vk.com/zelenzoom">ВКонтакте</a>
             </div>
         )
     }
