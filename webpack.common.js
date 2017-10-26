@@ -4,10 +4,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const environment = process.env.NODE_ENV;
-const cssName = environment === 'production' ? 'styles-[hash].css' : 'styles.css';
-const jsName = environment === 'production' ? 'bundle-[hash].js' : 'bundle.js';
-
 module.exports = {
     context: path.resolve(__dirname, './src'),
     resolve: {
@@ -15,10 +11,6 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
     entry: './client.js',
-    output: {
-        filename: jsName,
-        path: path.resolve(__dirname, 'dist')
-    },
 
     plugins: [
         new CleanWebpackPlugin(['dist']),
@@ -27,7 +19,7 @@ module.exports = {
             title: 'Александр Щеголь',
             favicon: 'images/favicon.ico'
         }),
-        new ExtractTextPlugin(cssName),
+
         new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -55,13 +47,10 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [{
-                    loader: 'style-loader'
-                }, {
-                    loader: 'css-loader'
-                }, {
-                    loader: 'sass-loader'
-                }]
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader!sass-loader'
+                })
             },
             {
                 test: /\.js$/,
