@@ -1,0 +1,59 @@
+# Перенаправление на gzip файлы
+AddEncoding gzip .gz
+<FilesMatch "\.js.gz$">
+  ForceType text/javascript
+  Header set Content-Encoding: gzip
+</FilesMatch>
+
+<FilesMatch "\.js$">
+  RewriteEngine On
+  RewriteCond %{HTTP_USER_AGENT} !".*Safari.*"
+  RewriteCond %{HTTP:Accept-Encoding} gzip
+  RewriteCond %{REQUEST_FILENAME}.gz -f
+  RewriteRule (.*)\.js$ $1\.js.gz [L]
+  ForceType text/javascript
+</FilesMatch>
+
+<FilesMatch "\.css.gz$">
+  ForceType text/css
+  Header set Content-Encoding: gzip
+</FilesMatch>
+
+<FilesMatch "\.css$">
+  RewriteEngine On
+  RewriteCond %{HTTP_USER_AGENT} !".*Safari.*"
+  RewriteCond %{HTTP:Accept-Encoding} gzip
+  RewriteCond %{REQUEST_FILENAME}.gz -f
+  RewriteRule (.*)\.css$ $1\.css.gz [L]
+  ForceType text/css
+</FilesMatch>
+
+# Перенаправление на gzip файлы
+#AddEncoding brotli .br
+#<FilesMatch "\.js.br">
+#  ForceType text/javascript
+#  Header set Content-Encoding: br
+#</FilesMatch>
+#
+#<FilesMatch "\.js$">
+#  RewriteEngine On
+#  RewriteCond %{HTTP_USER_AGENT} !".*Safari.*"
+#  RewriteCond %{HTTP:Accept-Encoding} br
+#  RewriteCond %{REQUEST_FILENAME}.gz -f
+#  RewriteRule (.*)\.js$ $1\.js.br [L]
+#  ForceType text/javascript
+#</FilesMatch>
+#
+#<FilesMatch "\.css.br">
+#  ForceType text/css
+#  Header set Content-Encoding: br
+#</FilesMatch>
+#
+#<FilesMatch "\.css$">
+#  RewriteEngine On
+#  RewriteCond %{HTTP_USER_AGENT} !".*Safari.*"
+#  RewriteCond %{HTTP:Accept-Encoding} br
+#  RewriteCond %{REQUEST_FILENAME}.br -f
+#  RewriteRule (.*)\.css$ $1\.css.br [L]
+#  ForceType text/css
+#</FilesMatch>
