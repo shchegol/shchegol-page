@@ -43,7 +43,7 @@ export default class Main extends Component {
                     </article>
 
                     <nav className="col-sm-4 text_right">
-                        <Link to="/Skills" className="page__link" onClick={ this.handleClick }>
+                        <Link to="/skills" className="page__link" onClick={ this.handleClick }>
                             Skills
                         </Link>
 
@@ -51,7 +51,7 @@ export default class Main extends Component {
                         { /*Projects*/ }
                         { /*</Link>*/ }
 
-                        <Link to="/Contacts" className="page__link" onClick={ this.handleClick }>
+                        <Link to="/contacts" className="page__link" onClick={ this.handleClick }>
                             Contacts
                         </Link>
                     </nav>

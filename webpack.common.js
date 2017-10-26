@@ -7,7 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     context: path.resolve(__dirname, './src'),
     resolve: {
-        modules: ['node_modules', 'src'],
+        modules: ['node_modules', './src'],
         extensions: ['.js', '.jsx']
     },
     entry: './client.js',
@@ -16,7 +16,7 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: 'index.ejs',
-            title: 'Александр Щеголь',
+            title: 'Alexander Shchegol',
             favicon: 'images/favicon.ico'
         }),
 
@@ -39,17 +39,10 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
+                test: /(\.css|\.scss)$/,
                 use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader'
-                })
-            },
-            {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader!sass-loader'
+                    fallback: "style-loader",
+                    use: ['css-loader', 'postcss-loader', 'sass-loader']
                 })
             },
             {
@@ -64,13 +57,13 @@ module.exports = {
                     }
                 }
             },
-            {test: /\.jsx?$/, exclude: [/node_modules/, /public/], use: 'babel-loader'},
-            {test: /\.json$/, use: 'json-loader'},
-            {test: /\.(woff|woff2|ttf|eot)/, loader: 'url-loader?limit=1'},
-            {test: /\.gif$/, use: 'url-loader?limit=10000&mimetype=image/gif'},
-            {test: /\.jpg$/, use: 'url-loader?limit=10000&mimetype=image/jpg'},
-            {test: /\.png$/, use: 'url-loader?limit=10000&mimetype=image/png'},
-            {test: /\.svg/, use: 'url-loader?limit=26000&mimetype=image/svg+xml'},
+            { test: /\.jsx?$/, exclude: [/node_modules/, /dist/], use: 'babel-loader' },
+            { test: /\.json$/, use: 'json-loader' },
+            { test: /\.(woff|woff2|ttf|eot)/, loader: 'url-loader?limit=1' },
+            { test: /\.gif$/, use: 'url-loader?limit=10000&mimetype=image/gif' },
+            { test: /\.jpg$/, use: 'url-loader?limit=10000&mimetype=image/jpg' },
+            { test: /\.png$/, use: 'url-loader?limit=10000&mimetype=image/png' },
+            { test: /\.svg/, use: 'url-loader?limit=26000&mimetype=image/svg+xml' },
         ]
     }
 };

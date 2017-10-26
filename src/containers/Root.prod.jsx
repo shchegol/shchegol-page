@@ -18,20 +18,22 @@ export default class Root extends Component {
 
     render() {
         return (
-            <div className="container">
-                <main className={ `card ${this.props.cardSide}` }>
-                    <section className="card__front">
-                        <Main/>
-                    </section>
+            <div>
+                <div className="container">
+                    <main className={ `card ${this.props.cardSide}` }>
+                        <section className="card__front">
+                            <Main/>
+                        </section>
 
-                    <section className="card__back">
-                        <Switch>
-                            <Route path='/Contacts' component={Contacts}/>
-                            <Route path='/Skills' component={Skills}/>
-                            <Route path='/Projects' component={Projects}/>
-                        </Switch>
-                    </section>
-                </main>
+                        <section className="card__back">
+                            <Switch>
+                                <Route path='/contacts' component={ Contacts }/>
+                                <Route path='/skills' component={ Skills }/>
+                                <Route path='/projects' component={ Projects }/>
+                            </Switch>
+                        </section>
+                    </main>
+                </div>
             </div>
         )
     }

@@ -28,9 +28,9 @@ export default class Root extends Component {
 
                         <section className="card__back">
                             <Switch>
-                                <Route path='/Contacts' component={ Contacts }/>
-                                <Route path='/Skills' component={ Skills }/>
-                                <Route path='/Projects' component={ Projects }/>
+                                <Route path='/contacts' component={ Contacts }/>
+                                <Route path='/skills' component={ Skills }/>
+                                <Route path='/projects' component={ Projects }/>
                             </Switch>
                         </section>
                     </main>
