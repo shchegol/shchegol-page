@@ -21,42 +21,36 @@ export default class Main extends Component {
 
     render() {
         return (
-            <section className="page">
+            <div className="page">
+                <Link to="/" className="page__close" onClick={ this.handleClick }>
+                    Back
+                </Link>
 
                 <header className="title">
-                    <h1 className="text-animation">
-                        ALEXANDER SHCHEGOL
-                    </h1>
-                    <p className="title__caption">Frontend Developer</p>
+                    <h1>Skills</h1>
                 </header>
 
-                <div className="row">
-                    <article className="col-sm-8">
-                        <p>
-                            Web development is a huge part of my life.
-                        </p>
-
-                        <p>
-                            I try to invest all my energy in every project that I do
-                            and make a main emphasis on performance and design
-                        </p>
-                    </article>
-
-                    <nav className="col-sm-4 text_right">
-                        <Link to="/skills" className="page__link" onClick={ this.handleClick }>
-                            Skills
-                        </Link>
-
-                        { /*<Link to="/Projects" className="page__link" onClick={ this.handleClick }>*/ }
-                        { /*Projects*/ }
-                        { /*</Link>*/ }
-
-                        <Link to="/contacts" className="page__link" onClick={ this.handleClick }>
-                            Contacts
-                        </Link>
-                    </nav>
-                </div>
-            </section>
+                <section className="row">
+                    <div className="col">
+                        <table className="grade">
+                            <tbody>
+                            <tr>
+                                <td className="grade__title">HTML/CSS</td>
+                                <td className="grade__scale"><span>|||||||||||||||</span>|</td>
+                            </tr>
+                            <tr>
+                                <td className="grade__title">JS</td>
+                                <td className="grade__scale"><span>|||||||||</span>|||||||</td>
+                            </tr>
+                            <tr>
+                                <td className="grade__title">REACT</td>
+                                <td className="grade__scale"><span>||||||</span>||||||||||</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
         )
     }
 }

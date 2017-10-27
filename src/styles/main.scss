@@ -1,19 +1,11 @@
 @import
-  // utils
 'utils/variables',
 'utils/function',
 'utils/mixins',
-
-// vendors
 'vendors/bootstrap/bootstrap-grid',
-
-  //base
 'base/reset',
 'base/base',
-
-  // containers
 '../containers/Root',
-
-  // important
+'../pages/Skills/Skills',
 'base/modificators'
 ;

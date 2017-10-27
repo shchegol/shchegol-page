@@ -1,0 +1,14 @@
+.grade {
+  &__title {
+    font-size: 1.5rem;
+    padding: .2rem 2rem .2rem 0
+  }
+
+  &__scale {
+    font-size: 1.5rem;
+    color: $gray-300;
+    span {
+      color: $green-500;
+    }
+  }
+}

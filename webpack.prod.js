@@ -33,5 +33,16 @@ module.exports = merge(common, {
         //     threshold: 10240,
         //     minRatio: 0.8
         // })
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /(\.css|\.scss)$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ['css-loader', 'postcss-loader', 'sass-loader']
+                })
+            }
+        ]
+    },
 });
